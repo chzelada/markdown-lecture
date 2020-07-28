@@ -217,4 +217,30 @@ py$iris_setosa %>%
 
 # SQL
 
+```{r}
+library(RMySQL)
+dbcon <- dbConnect(MySQL(),
+                   host = 'mysqlexamples-instance-1.coclu0fxxexm.us-east-1.rds.amazonaws.com',
+                   user = 'ufm_student',
+                   password = 'yQ2znv',
+                   dbname = 'datasets')
+```
+
+
+
+```{sql connection=dbcon}
+SELECT *
+FROM iris
+limit 10
+
+```
+
+
+
+
+```{r}
+dbDisconnect(dbcon)
+```
+
+
 
